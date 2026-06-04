@@ -31,6 +31,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <link rel="apple-touch-icon" sizes="114x114" href="img/yxlogo1.png">
             <link rel="stylesheet" href="css/libs.css">
             <link rel="stylesheet" href="css/main.css">
+<style>
+  .sticker-ghost-btn {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 8px 0;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #999;
+    text-decoration: none !important;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .sticker-ghost-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #999;
+    transition: width 0.3s ease;
+  }
+
+  .sticker-ghost-btn:hover {
+    color: #555;
+  }
+
+  .sticker-ghost-btn:hover::after {
+    width: 100%;
+  }
+</style>
 </head>
 
 
@@ -103,17 +139,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="col-lg-6 col-md-6">
                     <div class="passwordcenter" style="height: 70%; margin-top: 30%; margin-bottom: auto; align-items: center;">
                         <!-- <img src="img/passwordintro.png" class="userimg" style="margin-top:64px; padding-bottom: 24px;"> -->
-                        <h6 class="MainHeader" style="">Unlock portfolio</h6>
+                        <h6 class="MainHeader" style="">Unlock portfolio</h6> 
                            
                         <form class="passform" action ="passwordhome.html" onsubmit=" return pcd()" ;>
                         <input type="password" required id="pass1" placeholder="Type password here">
-
                         <button type="submit" style="background-color: black;">Submit</button>
 
 
                         </form> 
 
-                                 
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3"></div>
@@ -124,6 +158,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                    
                    
+<footer style="position: fixed; bottom: 32px; width: 100%; text-align: center;">
+  <a href="https://drive.google.com/drive/folders/1O27zzW4zAX7RqepmfLAOmZYSjOIDjNUi?usp=sharing" target="_blank" rel="noopener noreferrer" class="sticker-ghost-btn">Grab a sticker</a>
+</footer>
+
 </body>
 
 
