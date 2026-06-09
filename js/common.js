@@ -75,7 +75,7 @@ function fakeAjaxMasonry(button) {
     }
 }
 
-var color = "hellothere";
+// var color = "hellothere";
 
 function fakeAjaxSimple(button) {
     var filterActive = $('.filter__link.active').data('filter');
@@ -138,16 +138,30 @@ function DoFakeAjaxPostGrid(){
 
 function pcd() {
 
-if (document.getElementById('pass1').value != color ){
-    alert ('please try agian');
+    // Password hidden through character codes
+    const passParts = [104, 101, 108, 108, 111, 116, 104, 101, 114, 101];
+    const secret = String.fromCharCode(...passParts);
+
+    // User input
+    const input = document.getElementById('pass1').value.trim();
+
+    // Incorrect password
+    if (input !== secret) {
+        alert('please try again');
+        return false;
+    }
+
+    // Hidden page name
+    const pageParts = [121, 111, 119, 111, 114, 107, 115];
+    const page =
+        String.fromCharCode(...pageParts) + '.html';
+
+    // Slight delay before redirect
+    setTimeout(() => {
+        window.location.replace(page);
+    }, 100);
+
     return false;
-    
-}
-
-if (document.getElementById('pass1').value ==color ){
-    return true
-}
-
 }
 /////////////////////////////////////////////
 // MOBILE MENU
