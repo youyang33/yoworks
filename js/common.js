@@ -153,9 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // success → redirect (change file name if needed)
-        
-        const page = String.fromCharCode(121,111,119,111,114,107,115) + ".html";
-        window.location.href = page;
+        window.location.href = "yoworks.html";
     });
 });
 
