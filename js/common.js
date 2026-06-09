@@ -136,33 +136,29 @@ function DoFakeAjaxPostGrid(){
 }
 
 
-function pcd() {
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".passform");
 
-    // Password hidden through character codes
-    const passParts = [104, 101, 108, 108, 111, 116, 104, 101, 114, 101];
-    const secret = String.fromCharCode(...passParts);
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // stops page reload
 
-    // User input
-    const input = document.getElementById('pass1').value.trim();
+        const parts = [104, 101, 108, 108, 111, 116, 104, 101, 114, 101];
+        const secret = String.fromCharCode(...parts);
 
-    // Incorrect password
-    if (input !== secret) {
-        alert('please try again');
-        return false;
-    }
+        const input = document.getElementById("pass1").value.trim();
 
-    // Hidden page name
-    const pageParts = [121, 111, 119, 111, 114, 107, 115];
-    const page =
-        String.fromCharCode(...pageParts) + '.html';
+        if (input !== secret) {
+            alert("please try again");
+            return;
+        }
 
-    // Slight delay before redirect
-    setTimeout(() => {
-        window.location.replace(page);
-    }, 100);
+        // success → redirect (change file name if needed)
+        
+        const page = String.fromCharCode(121,111,119,111,114,107,115) + ".html";
+        window.location.href = page;
+    });
+});
 
-    return false;
-}
 /////////////////////////////////////////////
 // MOBILE MENU
 /////////////////////////////////////////////
